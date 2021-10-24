@@ -38,4 +38,4 @@ async function checkUserNameUnique(req, res, next) {
 module.exports = {
   validateUserId,
   validateUser
-};
+};0 
