@@ -11,8 +11,8 @@ server.use("/", (req, res, next) => {
   res.send("<h1>Hey There Good Looking<h1>");
 });
 
-const userRouter = require("./users/router");
-server.use("/api/users", userRouter);
+// const userRouter = require("./users/router");
+// server.use("/api/users", userRouter);
 
 // const classRouter = require("./classes/router");
 // server.use("/api/classes", classRouter);
