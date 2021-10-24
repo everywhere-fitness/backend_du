@@ -3,16 +3,12 @@ const server = express();
 const cors = require("cors");
 const helmet = require("helmet");
 
+const userRouter = require("./users/router");
 server.use(express.json());
 server.use(cors());
 server.use(helmet());
 
-server.use("/", (req, res, next) => {
-  res.send("<h1>Hey There Good Looking<h1>");
-});
-
-// const userRouter = require("./users/router");
-// server.use("/api/users", userRouter);
+server.use("/api/users", userRouter);
 
 // const classRouter = require("./classes/router");
 // server.use("/api/classes", classRouter);
@@ -20,7 +16,9 @@ server.use("/", (req, res, next) => {
 // const authRouter = require("./auth/auth_router");
 // server.use("/api/auth", authRouter);
 
-
+server.use("/", (req, res, next) => {
+  res.send("<h1>Hey There Good Looking<h1>");
+});
 
 server.use("*", (req, res, next) => {
   console.log(`hitting${req.method} and ${req.baseUrl}`);
